@@ -1,3 +1,5 @@
+{% load static %}<!-- Tambahkan baris ini di awal template -->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,10 +11,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Home Page</title>
+
+    <style>
+      /* CSS untuk warna font selang-seling */
+      h1 {
+        background: linear-gradient(to right, red, yellow, green, blue);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
   </head>
   <body>
-    <h1>Home Page</h1>
-    {% comment %} <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a> {% endcomment %}
+
+    <div class="container text-center">
+      <h1>Home Page</h1>
+      <p>Selamat datang!</p>
+      <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
