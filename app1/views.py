@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -14,7 +14,7 @@ def SignupPage(request):
         pas2=request.POST.get('password2')
         my_user=User.objects.create_user(username,email,pas1)
         my_user.save()
-        return HttpResponse("Akun berhasil dibuat")
+        return redirect("login")
         print(username,email,pas1,pas2)
 
     return render(request, 'signup.html')
